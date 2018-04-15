@@ -1,8 +1,9 @@
 <template>
 <div class="code">
+  Hello World,
   <div>
-    <ul class="list">
-      <li class="item light-blue bg-light-silver rounded ba b--dashed br4 shadow-3 ma3 mw6" v-for="item in items" :key="item.id">
+    <ul class="list pad2">
+      <li class="item" v-for="item in items" :key="item.id">
         <div class="score">
           score: {{item.score}}
         </div>
@@ -19,13 +20,6 @@
           {{item.time | timeSince}} ago
           </p>
         </div>
-        <template v-if="item.descendants">
-          <div class="comments">
-            <nuxt-link :to="'/item/'+ item.id">{{item.descendants}} comments</nuxt-link>
-
-        </div>
-        </template>
-
     </li>
     </ul>
   </div>
@@ -37,7 +31,7 @@ import {mapState} from 'vuex'
 
   export default {
     computed: mapState([
-      "items"
+      "itemUser"
     ])
   }
 </script>
